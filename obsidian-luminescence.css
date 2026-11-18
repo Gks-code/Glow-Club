@@ -1,0 +1,192 @@
+/* ==========================================================================
+   OBSIDIAN LUMINESCENCE — DESIGN SYSTEM TOKENS & UTILITIES
+   Clinical Bio-Hacking & High-Performance Pharmacotherapy Aesthetic
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Surfaces & Backgrounds */
+  --obsidian-canvas: #030609;
+  --surface: #0f141b;
+  --surface-dim: #0f141b;
+  --surface-bright: #343942;
+  --surface-container-lowest: #090e16;
+  --surface-container-low: #080d14;
+  --surface-container: #0e1724;
+  --surface-container-high: #162336;
+  --surface-container-highest: #30353d;
+  --surface-variant: #30353d;
+
+  /* Text & On-Colors */
+  --on-surface: #dee2ed;
+  --on-surface-variant: #bbc9cf;
+  --inverse-surface: #dee2ed;
+  --inverse-on-surface: #2c3139;
+  --background: #0f141b;
+  --on-background: #dee2ed;
+
+  /* Primary (Electric Cyan / Photonic Glow) */
+  --primary: #a8e8ff;
+  --primary-container: #00d4ff;
+  --on-primary: #003642;
+  --on-primary-container: #00586b;
+  --inverse-primary: #00677e;
+  --primary-fixed: #b4ebff;
+  --primary-fixed-dim: #3cd7ff;
+
+  /* Secondary (Deep Cobalt Photon) */
+  --secondary: #aec6ff;
+  --secondary-container: #4f8eff;
+  --on-secondary: #002e6a;
+  --on-secondary-container: #00275e;
+  --secondary-fixed: #d8e2ff;
+  --secondary-fixed-dim: #aec6ff;
+
+  /* Tertiary (Liquid Platinum / Chrome) */
+  --tertiary: #d6e0ec;
+  --tertiary-container: #bac4d0;
+  --on-tertiary: #28313b;
+  --on-tertiary-container: #47515b;
+  --chrome-border: rgba(203, 213, 225, 0.35);
+
+  /* Outlines & Halos */
+  --outline: #859398;
+  --outline-variant: #3c494e;
+  --surface-tint: #3cd7ff;
+  --surface-outline: rgba(0, 212, 255, 0.16);
+  --surface-outline-glow: rgba(0, 212, 255, 0.65);
+  --cyan-glow: 0 0 20px rgba(0, 212, 255, 0.6);
+  --cyan-halo: 0 0 24px -4px rgba(0, 212, 255, 0.45), 0 0 1px 1px rgba(0, 212, 255, 0.8);
+
+  /* Errors / Alerts */
+  --error: #ffb4ab;
+  --on-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  /* Typography Fonts */
+  --font-headline: 'Sora', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --gutter: 1.5rem;
+  --gutter-mobile: 1rem;
+  --margin: 3rem;
+  --margin-mobile: 1rem;
+}
+
+/* Glassmorphism & Elevation */
+.glass-panel {
+  background: rgba(14, 23, 36, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+}
+
+.glass-panel-active {
+  background: rgba(14, 23, 36, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, rgba(0, 212, 255, 0.6) 0%, rgba(0, 119, 255, 0.1) 50%, rgba(203, 213, 225, 0.3) 100%) 1;
+}
+
+.glass-panel-glow {
+  box-shadow: var(--cyan-halo);
+}
+
+/* Primary Button (Electric Cyan -> Cobalt Gradient) */
+.btn-obsidian-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #00d4ff 0%, #0077ff 100%);
+  color: #030609;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-obsidian-primary:hover {
+  box-shadow: var(--cyan-glow);
+  transform: translateY(-1px);
+}
+
+.btn-obsidian-primary:active {
+  transform: scale(0.98);
+}
+
+/* Secondary Button (Obsidian Glass + Liquid Chrome Border) */
+.btn-obsidian-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(14, 23, 36, 0.8);
+  color: #dee2ed;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--chrome-border);
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-obsidian-ghost:hover {
+  border-color: #00d4ff;
+  color: #00d4ff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+/* Status & Telemetry Badge with Pulsing LED */
+.badge-telemetry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-headline);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8e8ff;
+}
+
+.badge-telemetry .led-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #00d4ff;
+  box-shadow: 0 0 8px #00d4ff;
+  animation: pulse-led 2s infinite ease-in-out;
+}
+
+@keyframes pulse-led {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px #00d4ff; }
+  50% { opacity: 0.4; transform: scale(0.85); box-shadow: 0 0 2px #00d4ff; }
+}

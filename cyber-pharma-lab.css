@@ -1,0 +1,60 @@
+/* ==========================================================================
+   CYBER-PHARMA LAB (ABYSSAL VOID) — DESIGN SYSTEM TOKENS & UTILITIES
+   ClubGlow Pharma Performance · Ultra-Dark / OLED True Black Interface
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=Sora:wght@600;700;800&display=swap');
+
+:root {
+  /* Surfaces (Zero-Lux Elevation) */
+  --bg-pitch: #000000;
+  --bg-void: #04080e;
+  --bg-card: #080e17;
+  --bg-elevated: #0e1624;
+  --surface-glass: rgba(6, 12, 20, 0.75);
+  --border-surgical: rgba(0, 240, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* Luminescence & Photonic Core */
+  --hyper-cyan: #00f0ff;
+  --glow-cyan: #00d4ff;
+  --stealth-cobalt: #0052cc;
+  --abyssal-indigo: #031a40;
+  --starlight-white: #f1f5f9;
+  --slate-precision: #8599a6;
+
+  /* Telemetry Status */
+  --bio-emerald: #00ff88;
+  --warning-amber: #ffb020;
+  --critical-crimson: #ff5252;
+  --ion-telemetry: #00f0ff;
+
+  /* Glow Halos */
+  --halo-cyan: 0 0 16px rgba(0, 240, 255, 0.45);
+  --halo-cyan-lg: 0 0 32px rgba(0, 240, 255, 0.65), 0 0 64px rgba(0, 82, 204, 0.25);
+  --halo-emerald: 0 0 16px rgba(0, 255, 136, 0.4);
+
+  /* Linear Gradients */
+  --grad-cyan-ray: linear-gradient(135deg, #00f0ff 0%, #0052cc 100%);
+  --grad-liquid-chrome: linear-gradient(180deg, #ffffff 0%, #94a3b8 50%, #475569 100%);
+  --grad-void-depth: radial-gradient(circle at 80% 20%, #031a40 0%, #04080e 70%);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-telemetry: 'Space Grotesk', monospace;
+
+  /* Theme mappings */
+  --bg: var(--bg-pitch);
+  --bg-2: var(--bg-void);
+  --card: var(--bg-card);
+  --panel: var(--bg-elevated);
+  --ink: var(--starlight-white);
+  --ink-2: var(--slate-precision);
+  --muted: var(--slate-precision);
+  --line: var(--border-surgical);
+  --line-2: var(--border-subtle);
+  --accent: var(--hyper-cyan);
+  --accent-hover: var(--glow-cyan);
+  --on-ink: #000000;
+}
